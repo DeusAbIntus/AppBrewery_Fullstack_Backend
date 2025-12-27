@@ -1,0 +1,48 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+    <div class="post-body">
+    <h2>Add a new Recipe</h2>
+        <div class="form-body">
+            <form action="/new-post" method="post">
+                <div class="form-content">
+                <div class="grid-item"><label for="title"> Title :</label></div>
+                <div class="grid-item"><input type="text" name="title" id="title" required></div>
+                
+            
+                <div class="grid-item"><label for="ingredients"> Ingredients :</label></div>
+                <div class="grid-item">
+                <textarea 
+                    rows="5"
+                    columns="8" 
+                    name="ingredients" 
+                    id="ingredients"
+                    placeholder="e.g. 
+                                 2 eggs
+                                 1 cup flour
+                                 ½ cup sugar"
+                    required>
+                </textarea>
+                </div>
+                
+            
+                <div class="grid-item"><label for="recipe"> Procedure :</label></div>
+                <div class="grid-item">
+                <textarea 
+                    rows="5"
+                    columns="8" 
+                    name="recipeContent" 
+                    id="recipe"
+                    placeholder="Step 1: Preheat oven to 180°C
+                                 Step 2: Mix ingredients..."
+                    required>
+                </textarea>
+                </div>
+               
+                </div>
+                <div class="form-btn"><button type="submit">Submit Recipe</button></div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") %>
+
+<body>
+    <div class="post-body">
+    <h2>Edit recipe</h2>
+    <div class="form-body">
+    <form action="/edit-post/<%= post.id %>" method="post">
+
+        <div class="form-content">  
+        <div class="grid-item"><label for="title">Title:</label></div>
+        <div class="grid-item"><input type="text" id="title" name="title" value="<%= post.title %>" required></div>
+
+        <div class="grid-item"><label for="ingredients">Ingredients:</label></div>
+        <div class="grid-item"><textarea id="ingredients" name="ingredients" rows="6" required><%= post.ingredients %></textarea></div>   
+
+        <div class="grid-item"><label for="recipe">Recipe:</label></div>
+        <div class="grid-item"><textarea id="recipe" name="recipeContent" rows="8" required><%= post.recipeContent %></textarea></div>
+        </div>
+        <div class="form-btn"><button type="submit">Update Post</button></div>
+
+    </form>
+    </div>
+    </div>
+</body>
+</html>
