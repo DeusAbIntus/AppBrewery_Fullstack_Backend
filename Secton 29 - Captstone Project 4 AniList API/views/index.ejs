@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css">
+    <title>The Anime Amateur</title>
+</head>
+<body>
+    <h1>Choose your Kryptonite ! (˶˃ ᵕ ˂˶) </h1>
+
+    <details>
+        <summary>Select Genres</summary>
+        <form action="/" method="POST">
+            <fieldset>
+                <ul>
+                    <% genres.forEach( genre => {%>
+                        <li>
+                            <label for="<%= genre %>"> 
+                                <span><%= genre %></span> 
+                                <input type="checkbox" name="genres[]" id="<%= genre %>" value="<%= genre %>"> 
+                            </label>
+                        </li>
+                    <% }); %>
+                </ul>
+            </fieldset>
+            <button type="submit" class="form-submit">Submit</button>
+        </form>
+    </details>
+
+    <h2> Here are the top picks :</h2>
+    <section class="anime-list">
+    <% animes.forEach( (anime, index) => { %>
+        <div class="anime-item">
+            <h3 class="anime-title"><%= anime.title %></h3>
+            <p class="anime-score">Score: <%= anime.score %></p>
+            <p class="anime-genre">Genre: <%= anime.genre %></p>
+            <p class="anime-desc">Description: <%= anime.description %></p>
+            <img src=<%= anime.image %> alt="anime-image" class="anime-cover">
+        </div>
+    <% }); %>
+    </section>
+</body>
+</html>
